@@ -1,0 +1,5 @@
+# Docker Workshop - creating a custom docker image
+FROM ubuntu:xenial
+MAINTAINER mshaul <mshaul@netapp.com>
+RUN apt-get update
+RUN apt-get install -y net-tools telnet openssh-server

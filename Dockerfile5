@@ -1,0 +1,16 @@
+# Docker Workshop - creating a custom docker image
+FROM ubuntu:xenial
+MAINTAINER mshaul <mshaul@netapp.com>
+
+RUN useradd -ms /bin/bash user
+
+RUN echo "EXPORT 192.168.0.0/24" >> /etc/exports.lists
+
+RUN apt-get update
+RUN apt-get install -y default-jre
+
+USER user
+
+RUN cd ~ && echo "export JAVA_HOME=/usr/lib/jvm/default-java/jre/" >> /home/user/.bashrc
+
+ENV JAVA_BIN /usr/lib/jvm/default-java/jre/bin

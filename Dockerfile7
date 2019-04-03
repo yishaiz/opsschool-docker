@@ -1,0 +1,9 @@
+# Docker Workshop - creating a custom docker image
+FROM ubuntu:xenial
+MAINTAINER mshaul <mshaul@netapp.com>
+
+RUN useradd -ms /bin/bash user
+
+ENTRYPOINT echo "NetApp Docker workshop ENTRYPOINT"
+
+USER user

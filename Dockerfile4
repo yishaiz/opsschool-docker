@@ -1,0 +1,8 @@
+# Docker Workshop - creating a custom docker image
+FROM ubuntu:xenial
+MAINTAINER mshaul <mshaul@netapp.com>
+
+RUN useradd -ms /bin/bash user
+USER user
+
+RUN echo "EXPORT 192.168.0.0/24" >> /etc/exports.lists

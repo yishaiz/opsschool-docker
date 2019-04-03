@@ -1,0 +1,5 @@
+# Docker Workshop - creating a custom docker image
+FROM ubuntu:xenial
+MAINTAINER mshaul <mshaul@netapp.com>
+
+USER user

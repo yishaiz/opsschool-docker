@@ -1,0 +1,12 @@
+# Docker Workshop - creating a custom docker image
+FROM ubuntu:xenial
+MAINTAINER mshaul <mshaul@netapp.com>
+
+RUN apt-get update
+RUN apt-get install -y apache2 net-tools
+
+RUN echo "This is a test for NetAPp Docker workshop!" > /var/www/html/index.html
+
+ENTRYPOINT apachectl "-DFOREGROUND"
+
+EXPOSE 80
